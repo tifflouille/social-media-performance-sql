@@ -24,7 +24,9 @@ Key Findings
 - Reach and engagement rate are not correlated. Some of the highest-reach posts scored mid or low on the weighted health score — indicating that distribution alone does not equal performance. Optimizing for reach without monitoring engagement quality risks inflating vanity metrics at the expense of community signal.
 
 Methodology
+
 All analysis performed in MySQL on a cleaned export of post-level data. Key techniques include window functions for cross-type and within-type ranking, CTEs for multi-step scoring logic, weighted composite health scores using NTILE quartiling, and CASE WHEN classification for performance tiering. Date parsing was used to extract posting hour and bucket posts into two-hour time windows.
 
 Limitations
+
 One month of data is a limited sample: posting frequency, algorithmic changes, and seasonal factors can all distort patterns that would average out over a longer window. Findings should be treated as directional rather than definitive, and validated against at least three months of data before informing content strategy decisions.
