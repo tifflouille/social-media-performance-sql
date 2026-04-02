@@ -1,6 +1,9 @@
 Instagram Post Performance SQL Analysis
+
 A one-month SQL analysis of Instagram post performance data, examining engagement quality, content scoring, and posting window optimization for a D2C fashion brand.
+
 Tools: MySQL
+
 Data source: Post Performance Analytics export from Later
 Note: The underlying data is proprietary and not included in this repository. Queries are written to be portable and can be applied to any CSV export from Later's Post Performance Analytics.
 
