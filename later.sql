@@ -186,19 +186,23 @@ ORDER BY ratio1 DESC;
 
 -- POSTS THAT HIT ABOVE AVERAGE ENGAGEMENT RATE
 WITH avg_engrate AS (
-	SELECT 
-		ROUND(AVG(`Engagement Rate`),2) AS avg_eng_rate
-	FROM `post_performance_clean-2`
+    SELECT 
+        ROUND(AVG(`Engagement Rate`), 2) AS avg_eng_rate
+    FROM igq1_clean
 )
-	SELECT 
-		post_id,
-		media_type,
-		`Engagement Rate`,
-		avg_eng_rate,
-        CASE WHEN `Engagement Rate` > avg_eng_rate THEN 'Flag'
-        ELSE 'Below'
-	END AS engagement_tier
-FROM `post_performance_clean-2`
+SELECT 
+    post_id,
+    DATE(posted_at) AS post_date,
+    media_type,
+    `Engagement Rate`,
+    avg_eng_rate,
+    ROUND(`Engagement Rate` - avg_eng_rate, 2) AS diff_from_avg,
+    CASE 
+        WHEN `Engagement Rate` >= avg_eng_rate * 1.5 THEN 'Top Performer'
+        WHEN `Engagement Rate` >= avg_eng_rate THEN 'Above Average'
+        ELSE 'Below Average'
+    END AS engagement_tier
+FROM igq1_clean
 CROSS JOIN avg_engrate
-ORDER BY `Engagement Rate` DESC;
+ORDER BY CAST(REPLACE(`Engagement Rate`, '%', '') AS DECIMAL(5,2)) DESC;
     
