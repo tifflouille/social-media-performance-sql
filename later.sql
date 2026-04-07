@@ -1,4 +1,4 @@
-USE `stl_ig_jan26`;
+USE `xxx`;
 
 -- AVG ENGAGEMENT, VIEWS, AND REACH BY MEDIA TYPE
 SELECT 
@@ -13,11 +13,11 @@ SELECT
 SELECT 
     media_type,
     COUNT(*) AS post_count,
-    ROUND(AVG(`Engagement Rate`), 2) AS avg_eng_rate,
-    ROUND(AVG(Views), 0) AS avg_views,
-    ROUND(AVG(Reach), 0) AS avg_reach,
-    ROUND(AVG(Engagements / NULLIF(Views, 0)) * 100, 2) AS eng_per_view_pct,
-    ROUND(AVG(Saves / NULLIF(Engagements, 0)) * 100, 2) AS save_rate -- QUALITY OF ENGAGEMENT 
+    ROUND(SUM(`Engagement Rate`) / COUNT(*), 2) AS avg_eng_rate,
+    ROUND(SUM(Views) / COUNT(*), 0) AS avg_views,
+    ROUND(SUM(Reach) / COUNT(*), 0) AS avg_reach,
+    ROUND(SUM(Engagements) / NULLIF(SUM(Views), 0) * 100, 2) AS eng_per_view_pct,
+    ROUND(SUM(Saves) / NULLIF(SUM(Engagements), 0) * 100, 2) AS save_rate
 FROM `post_performance_clean-2`
 GROUP BY media_type;
 
