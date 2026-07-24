@@ -8,11 +8,11 @@ Data source: Post Performance Analytics export from Later
 Note: The underlying data is proprietary and not included in this repository. Queries are written to be portable and can be applied to any CSV export from Later's Post Performance Analytics.
 
 Business Context
-Most brands track vanity metrics such as likes, follower count, reach. Fewer ask the harder questions: which content is actually worth making again, which posting windows drive real engagement, and which posts are quietly underperforming despite decent view counts. This analysis builds a framework to answer those questions from a single month of Instagram data.
+Most brands track metrics such as likes, follower count, reach. Less brands ask the harder questions: which content is actually worth making again, which posting windows drive real engagement, and which posts are underperforming despite decent view counts. This analysis builds a framework to answer those questions from a single month of Instagram data.
 
 
 Questions Answered
-- Engagement quality by content type: mot all engagement is equal. This analysis separates raw engagement rate from saves-to-likes ratio and engagement-per-view, which distingues content that people passively scroll past from content they actively want to return to.
+- Engagement quality by content type: not all engagement is equal. This analysis separates raw engagement rate from saves-to-likes ratio and engagement-per-view, which differentiates content that people passively scroll past from content they actively want to return to.
 - Posting window optimization: which two-hour windows consistently outperform on engagement rate, and does posting time actually move the needle enough to matter?
 - Weighted post health scoring: a composite score weighting engagement rate, saves, reach, comments, and views, calibrated to reflect growth-stage brand priorities rather than raw popularity. Posts are bucketed into performance tiers (Top, High, Mid, Poor) and quartiles.
 - Reach-to-follower ratio: which posts punched above their weight in distribution reaching beyond the existing audience rather than just performing well within it?
@@ -20,8 +20,8 @@ Questions Answered
 
 Key Findings
 - Saves are the most predictive signal of content quality. Posts with a high save-to-like ratio consistently score in the top performance tier, which is suggesting that content designed to be bookmarked (educational, inspirational, reference-worthy) outperforms content designed to entertain in the moment.
-- Posting window matters, but not uniformly. Certain two-hour windows show meaningfully higher average engagement rates than others, but the effect is smaller than content quality differences. Getting the format right matters more than getting the timing perfect.
-- Reach and engagement rate are not correlated. Some of the highest-reach posts scored mid or low on the weighted health score — indicating that distribution alone does not equal performance. Optimizing for reach without monitoring engagement quality risks inflating vanity metrics at the expense of community signal.
+- Posting window matters, but not uniformly. Certain two-hour windows show meaningfully higher average engagement rates than others, but the effect is smaller than content quality differences. Getting the format right is more important than getting the timing perfect.
+- Reach and engagement rate are not correlated. Some of the highest-reach posts scored mid or low on the weighted health score, indicating that distribution alone does not equal performance. Optimizing for reach without monitoring engagement quality risks inflating vanity metrics at the expense of community signal.
 
 Methodology
 
